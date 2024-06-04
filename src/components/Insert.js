@@ -7,7 +7,9 @@ function Insert({ addInput }) {
     setId(id + 1);
     const newAdd = { id, value };
     addInput(newAdd);
+    setValue("")
   };
+  
   return (
     <div>
       <input
