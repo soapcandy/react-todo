@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <TodoList input={input} setInput={setInput} />
-      <Insert addinput={addInput} />
+      <Insert addInput={addInput} />
     </div>
   );
 }

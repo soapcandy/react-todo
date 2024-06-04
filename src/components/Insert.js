@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Insert({ addinput }) {
+function Insert({ addInput }) {
   const [value, setValue] = useState();
   return (
     <div>
@@ -9,7 +9,7 @@ function Insert({ addinput }) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={() => addinput(value)}>입력</button>
+      <button onClick={() => addInput(value)}>입력</button>
     </div>
   );
 }
