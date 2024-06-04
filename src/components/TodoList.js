@@ -1,23 +1,20 @@
-function TodoList() {
+function TodoList({ input }) {
   const testTodo = [
     {
       title: "제목",
-      content: "내용",
     },
     {
       title: "제목2",
-      content: "내용2",
     },
   ];
 
   return (
     <div>
-      {testTodo.map((item) => (
-        <div style={{ display: "flex" }}>
+      {input.map((item, index) => (
+        <li style={{ display: "flex" }} key={index}>
           <input type="checkbox" />
-          <div>{item.title}</div>
-          <div>{item.content}</div>
-        </div>
+          <div>{item}</div>
+        </li>
       ))}
     </div>
   );
