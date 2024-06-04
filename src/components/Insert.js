@@ -9,13 +9,20 @@ function Insert({ addInput }) {
     addInput(newAdd);
     setValue("")
   };
-  
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleAdd();
+    }
+  };
+
   return (
     <div>
       <input
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={handleKeyPress}
       />
       <button onClick={handleAdd}>입력</button>
     </div>
