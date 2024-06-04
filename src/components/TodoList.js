@@ -1,17 +1,16 @@
-function TodoList({ input, setInput }) {
-  const handleDelete = (index) => {
-    const newTodoList = input.slice(0, index).concat(input.slice(index + 1));
-    setInput(newTodoList);
-  };
+import TodoItem from "./TodoItem";
 
+function TodoList({ input, setInput }) {
   return (
     <div>
       {input.map((item, index) => (
-        <li style={{ display: "flex" }} key={index}>
-          <input type="checkbox" />
-          <div>{item}</div>
-          <button onClick={() => handleDelete(index)}>삭제</button>
-        </li>
+        <TodoItem
+          item={item}
+          index={index}
+          key={index}
+          input={input}
+          setInput={setInput}
+        ></TodoItem>
       ))}
     </div>
   );
