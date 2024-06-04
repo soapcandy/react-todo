@@ -3,8 +3,8 @@ import { useState } from "react";
 function TodoItem({ item, input, setInput }) {
   const [check, setCheck] = useState(false);
 
-  const handleDelete = (index) => {
-    const newTodoList = input.slice(0, index).concat(input.slice(index + 1));
+  const handleDelete = (id) => {
+    const newTodoList = input.filter((todo) => todo.id !== id);
     setInput(newTodoList);
   };
 
@@ -13,7 +13,7 @@ function TodoItem({ item, input, setInput }) {
       <li style={{ display: "flex" }}>
         <input
           type="checkbox"
-          onClick={() => {
+          onChange={() => {
             setCheck(!check);
           }}
         />
