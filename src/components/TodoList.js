@@ -1,12 +1,8 @@
-function TodoList({ input }) {
-  const testTodo = [
-    {
-      title: "제목",
-    },
-    {
-      title: "제목2",
-    },
-  ];
+function TodoList({ input, setInput }) {
+  const handleDelete = (index) => {
+    const newTodoList = input.slice(0, index).concat(input.slice(index + 1));
+    setInput(newTodoList);
+  };
 
   return (
     <div>
@@ -14,6 +10,7 @@ function TodoList({ input }) {
         <li style={{ display: "flex" }} key={index}>
           <input type="checkbox" />
           <div>{item}</div>
+          <button onClick={() => handleDelete(index)}>삭제</button>
         </li>
       ))}
     </div>
