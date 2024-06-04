@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function TodoItem({ index, item, input, setInput }) {
-  const [check, setCheck] = useState();
+function TodoItem({ item, input, setInput }) {
+  const [check, setCheck] = useState(false);
 
   const handleDelete = (index) => {
     const newTodoList = input.slice(0, index).concat(input.slice(index + 1));
@@ -22,9 +22,9 @@ function TodoItem({ index, item, input, setInput }) {
             check ? { textDecoration: "line-through", opacity: 0.5 } : null
           }
         >
-          {item}
+          {item.value}
         </div>
-        <button onClick={() => handleDelete(index)}>삭제</button>
+        <button onClick={() => handleDelete(item.id)}>삭제</button>
       </li>
     </div>
   );

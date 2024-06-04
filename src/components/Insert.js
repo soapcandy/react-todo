@@ -1,7 +1,13 @@
 import { useState } from "react";
 
 function Insert({ addInput }) {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
+  const [id, setId] = useState(0);
+  const handleAdd = () => {
+    setId(id + 1);
+    const newAdd = { id, value };
+    addInput(newAdd);
+  };
   return (
     <div>
       <input
@@ -9,7 +15,7 @@ function Insert({ addInput }) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={() => addInput(value)}>입력</button>
+      <button onClick={handleAdd}>입력</button>
     </div>
   );
 }

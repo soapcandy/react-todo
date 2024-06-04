@@ -3,11 +3,10 @@ import TodoItem from "./TodoItem";
 function TodoList({ input, setInput }) {
   return (
     <div>
-      {input.map((item, index) => (
+      {input.map((item) => (
         <TodoItem
           item={item}
-          index={index}
-          key={index}
+          key={item.id}
           input={input}
           setInput={setInput}
         ></TodoItem>
